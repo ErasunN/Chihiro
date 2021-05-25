@@ -54,4 +54,8 @@ document.addEventListener("DOMContentLoaded", () => {
         let value = window.scrollY;
         titulo.style.top = value * 0.2 + 'px';
     })
+
+    ScrollOut({
+        targets: 'div'
+    })
 });
