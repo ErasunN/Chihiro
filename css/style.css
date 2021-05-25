@@ -1,8 +1,9 @@
 * {
-    background-color: black;
+    background-color: #000;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 .container {
@@ -14,11 +15,11 @@
 /*Loader*/
 
 .chihiro-load {
-    height: 300px;
-    width: 140px;
+    height: 60vh;
+    width: 15vw;
     background: url('../assets/chihiro.png') repeat-x;
     background-size: cover;
-    bottom: 30px;
+    bottom: 3%;
 }
 
 .loader {
@@ -33,8 +34,8 @@
 }
 
 .text {
-    width: 140px;
-    height: 140px;
+    width: 13vw;
+    height: 14vw;
     position: absolute;
     bottom: -50%;
     left: 50%;
@@ -46,16 +47,16 @@
 .text p {
     display: inline-block;
     animation: moveLeft 2s linear infinite;
-    font-size: 30px;
+    font-size: 2em;
 }
 
 .text p::before {
     content: 'LOADING';
     display: inline-block;
-    width: 140px;
-    height: 30px;
+    width: 13vw;
+    height: 4vw;
     position: absolute;
-    left: 110%;
+    left: 120%;
     top: 0;
 }
 
@@ -63,7 +64,7 @@
     display: none;
     margin: 0;
     padding: 0;
-    max-width: 764px;
+    max-width: 100vw;
 }
 
 
@@ -203,7 +204,7 @@
     background-color: transparent;
     width: 300px;
     height: 150px;
-    top: 10%;
+    top: 0;
     left: 10%;
     position: fixed;
 }
@@ -239,6 +240,37 @@
 }
 
 
+/*Divisor*/
+
+#divider {
+    background-color: transparent;
+    background-image: linear-gradient(to top, rgba(255, 255, 255, 0.5), transparent);
+    position: absolute;
+    width: 100%;
+    left: 0;
+    height: 10%;
+    bottom: -10%;
+    z-index: 51;
+}
+
+#img-coal {
+    position: relative;
+    background-color: transparent;
+    background: url('../assets/hollin.png') repeat-x;
+    background-size: contain;
+    height: 100%;
+    top: 50%;
+}
+
+
+/* #divider.div-img {
+    width: 100%;
+    height: 10%;
+    background: url('../assets/hollin.png') repeat-x;
+    z-index: 52;
+} */
+
+
 /*Seccion principal con sinopsis*/
 
 .introduction {
@@ -246,7 +278,7 @@
     background: url('../assets/baba-intro.jpg');
     background-size: cover;
     background-repeat: no-repeat;
-    bottom: -100%;
+    bottom: -110%;
     left: 0;
     height: 100%;
     width: 100%;
@@ -265,7 +297,7 @@
         transform: translateX(0%);
     }
     to {
-        transform: translateX(-110%);
+        transform: translateX(-120%);
     }
 }
 

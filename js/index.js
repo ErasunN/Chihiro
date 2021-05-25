@@ -49,6 +49,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     //Seccion de eventos scroll
-    let titulo = document.querySelector(".title");
-    window.addEventListener("scroll", () => {})
+    let titulo = document.querySelector("#img-title");
+    window.addEventListener("scroll", () => {
+        let value = window.scrollY;
+        titulo.style.top = value * 0.2 + 'px';
+    })
 });
