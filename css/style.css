@@ -3,7 +3,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    overflow-x: hidden;
 }
 
 .container {
@@ -37,7 +36,7 @@
     width: 140px;
     height: 140px;
     position: absolute;
-    bottom: -150px;
+    bottom: -50%;
     left: 50%;
     transform: translate(-50%, 0);
     overflow: hidden;
@@ -130,10 +129,6 @@
     background-color: transparent;
 }
 
-.my-nav-links::-webkit-scrollbar {
-    display: none;
-}
-
 .my-nav-links li {
     list-style: none;
     margin: 15px;
@@ -149,6 +144,10 @@
     text-transform: uppercase;
     position: relative;
     padding: 3px 0;
+}
+
+.my-nav-links li a::-webkit-scrollbar {
+    display: none;
 }
 
 
