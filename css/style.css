@@ -27,7 +27,10 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    overflow-y: hidden;
+}
+
+.loader::-webkit-scrollbar {
+    display: none;
 }
 
 .text {
@@ -99,6 +102,10 @@
     justify-content: space-around;
 }
 
+.burguer-btn::-webkit-scrollbar {
+    display: none;
+}
+
 .line {
     width: 100%;
     height: 3px;
@@ -121,6 +128,10 @@
 .my-nav-links {
     text-align: right;
     background-color: transparent;
+}
+
+.my-nav-links::-webkit-scrollbar {
+    display: none;
 }
 
 .my-nav-links li {
