@@ -224,14 +224,6 @@
     animation: moveTrain 15s linear infinite;
 }
 
-.timer {
-    position: absolute;
-    z-index: 20;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
 
 /*Divisor*/
 
@@ -312,6 +304,46 @@
     height: 105%;
     width: 100%;
     z-index: 50;
+}
+
+.grid {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 80%;
+    height: 80%;
+}
+
+
+/*Temporizador de estreno*/
+
+.timer {
+    position: absolute;
+    background-color: mintcream;
+    border-radius: 5px;
+    z-index: 20;
+    width: 30%;
+    top: 20%;
+    left: 95%;
+    transform: translate(-50%, -50%);
+    color: #000;
+}
+
+.timer * {
+    background-color: transparent;
+}
+
+#countdown ul li {
+    display: inline-block;
+    font-size: .8em;
+    list-style-type: none;
+    padding: .5em;
+    text-transform: uppercase;
+}
+
+#countdown ul li span {
+    display: block;
+    font-size: 1.2rem;
 }
 
 

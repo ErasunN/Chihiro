@@ -3,43 +3,39 @@ document.addEventListener("DOMContentLoaded", () => {
 
     window.addEventListener("load", () => {
         setTimeout(() => {
-            console.log("Timeout");
             document.querySelector(".loader").classList.add("fadeOut");
             document.querySelector(".home").classList.add("fadeIn");
-            //timer(deadline, 'timer');
-        }, 3000)
+        }, 3000);
+
+        //Temporizador / countdown de estreno
+        const second = 1000,
+            minute = second * 60,
+            hour = minute * 60,
+            day = hour * 24;
+
+        let deadline = "Jun 28, 2021 00:00:00",
+            countDown = new Date(deadline).getTime(),
+            x = setInterval(function() {
+
+                let now = new Date().getTime(),
+                    distance = countDown - now;
+
+                document.getElementById("days").innerText = Math.floor(distance / (day)),
+                    document.getElementById("hours").innerText = Math.floor((distance % (day)) / (hour)),
+                    document.getElementById("minutes").innerText = Math.floor((distance % (hour)) / (minute)),
+                    document.getElementById("seconds").innerText = Math.floor((distance % (minute)) / second);
+
+                if (distance < 0) {
+                    countdown = document.getElementById("countdown"),
+                        content = document.getElementById("content");
+
+                    countdown.style.display = "none";
+                    content.style.display = "block";
+
+                    clearInterval(x);
+                }
+            }, 0)
     })
-
-    let remainTime = (deadline) => {
-        let now = new Date();
-        let remainTime = (new Date(deadline) - now + 1000) / 1000;
-        let remainSecond = ('0' + Math.floor(remainTime % 60)).slice(-2);
-        let remainMinute = ('0' + Math.floor(remainTime / 60 % 60)).slice(-2);
-        let remainHour = ('0' + Math.floor(remainTime / 3600 % 24)).slice(-2);
-        let remainDay = Math.floor(remainTime / (3600 * 24));
-
-        return {
-            remainTime,
-            remainSecond,
-            remainMinute,
-            remainHour,
-            remainDay
-        }
-    }
-
-    let timer = (deadline, elem) => {
-        let element = document.getElementById(elem);
-
-        console.log("entro");
-        setInterval(() => {
-            let time = remainTime(deadline);
-            element.innerHTML = `${time.remainDay}D - ${time.remainHour}h:${time.remainMinute}m:${time.remainSecond}s`;
-            if (time.remainTime <= 1) {
-                clearInterval(update);
-                element.innerHTML = "Pelicula estrenada!";
-            }
-        }, 1000);
-    }
 
     //Menu tipo hamburguesa
     let menu = document.querySelector(".burguer-btn");
