@@ -53,5 +53,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
     ScrollOut({
         targets: 'div'
-    })
+    });
 });
