@@ -229,13 +229,13 @@
 
 .divider {
     background-color: transparent;
-    background-image: linear-gradient(to top, rgba(255, 255, 255, 0.5), transparent);
+    background-image: linear-gradient(to top, rgba(255, 255, 255, 0.3), transparent);
     position: absolute;
     width: 100%;
     left: 0;
-    height: 10%;
-    top: -10%;
-    z-index: 51;
+    height: 70px;
+    top: -70px;
+    z-index: 10000;
 }
 
 .img-coal {
@@ -299,43 +299,38 @@
 
 .my-grid {
     position: absolute;
-    bottom: -210%;
+    background-color: #21303A;
+    bottom: -250%;
     left: 0;
-    height: 105%;
+    height: 150%;
     width: 100%;
-    z-index: 50;
+    z-index: 60;
+}
+
+.my-grid * {
+    background-color: transparent;
 }
 
 .grid {
     position: absolute;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 20%;
+    gap: 1%;
+    width: 90%;
+    height: 100%;
     top: 5%;
     left: 5%;
-    width: 80%;
-    height: 80%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    perspective: 500px;
-}
-
-.grid * {
-    background-color: transparent;
+    padding: 1%;
 }
 
 .my-card {
-    background-color: rgb(158, 180, 190);
-    position: relative;
-    max-width: 30%;
-    height: 30%;
-    margin: 3% 1%;
-    padding: 1%;
-    border-radius: 5px;
-    display: flex;
-    flex-direction: column;
-    z-index: 51;
-    transition: .5s ease-in-out;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.3s ease-in-out;
     opacity: 0;
+    overflow-y: hidden;
 }
 
 .my-card[data-scroll="in"] {
@@ -343,42 +338,225 @@
     opacity: 1;
 }
 
-.my-card:hover {
-    height: 60%;
+.my-card:nth-child(1) {
+    grid-column-start: span 2;
+    grid-row-start: span 2;
+}
+
+.my-card:nth-child(2) {
+    grid-column-start: span 2;
+}
+
+.my-card:nth-child(5) {
+    grid-row-start: span 2;
+}
+
+.my-card:nth-child(8) {
+    grid-row-start: span 2;
+}
+
+.my-card:nth-child(9) {
+    grid-column-start: span 2;
+}
+
+.card-1 {
+    background: url('../assets/chihiro-char.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.card-2 {
+    background: url('../assets/haku-char.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.card-3 {
+    background: url('../assets/sin-cara-char.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.card-4 {
+    background: url('../assets/kamaji-char.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.card-5 {
+    background: url('../assets/zeniba-char.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.card-6 {
+    background: url('../assets/boh-char.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.card-7 {
+    background: url('../assets/padres-char.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.card-8 {
+    background: url('../assets/baba-intro.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.card-9 {
+    background: url('../assets/hollines-char.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.card-img {
+    transition: 0.3s ease-in-out;
+    width: 100%;
+    height: 100%;
+    filter: grayscale();
+}
+
+.my-card:hover>.card-img {
+    filter: none;
+    transform: perspective(1200px) rotateY(20deg);
+}
+
+.card-content * {
+    background-color: transparent;
+    color: #fff;
+}
+
+.card-content {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: relative;
+    width: 80%;
+    left: 50%;
+    top: -50%;
+    padding: 2%;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    transform: translate(-50%, -50%);
+    transition: 0.5s ease-in-out;
+    opacity: 0;
+}
+
+.my-card:hover>.card-content {
+    opacity: 1;
+}
+
+
+/*Seccion de carrusel de imagenes*/
+
+#avances {
+    background-color: #21303A;
+    position: absolute;
+    bottom: -350%;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    z-index: 60;
+}
+
+.my-slider {
+    position: relative;
+    border: 2px solid #B9CBD3;
+    border-radius: 5px;
+    width: 80%;
+    height: 80%;
+    margin: auto;
+    top: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.my-slider input[type="radio"] {
+    position: relative;
+    z-index: 1000;
+    margin: 1%;
+    outline: none;
+    cursor: pointer;
 }
 
 .img-box {
     position: absolute;
-    margin: auto;
-    width: 90%;
-    height: 50%;
-    top: -10%;
-    z-index: 1;
-    transition: 0.3s ease-in-out;
-}
-
-.img-box img {
-    max-width: 100%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
     border-radius: 5px;
+    z-index: 60;
+    transition: 0.5s;
+    clip-path: inset(0% 100% 0% 100%);
 }
 
-.card-content {
+.my-slider input[type="radio"]:checked+.img-box {
+    z-index: 70;
+    clip-path: inset(0% 0% 0% 0%);
+}
+
+.img-box div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+.img-box .content * {
+    background-color: transparent;
+}
+
+.img-box .content {
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 1px solid #fff;
+    border-radius: 5px;
+    padding: 1%;
+    color: #fff;
     position: relative;
-    top: 50%;
-    text-align: justify;
-    visibility: hidden;
-    opacity: 0;
+    text-align: center;
+    height: 10%;
+    left: 0;
+    bottom: -90%;
+    transform: translate(10px, -10px);
     transition: 0.3s ease-in-out;
+    opacity: 0;
 }
 
-.my-card:hover .card-content {
-    visibility: visible;
+.img-box:hover .content {
     opacity: 1;
-    transition-delay: 0.3s;
 }
 
-.my-card:hover .img-box {
-    transform: perspective(600px) rotateX(5deg);
+.img-back-1 {
+    background: url('../assets/train-escene.jpg');
+    background-size: cover;
+}
+
+.img-back-2 {
+    background: url('../assets/yubaba-escene.jpg');
+    background-size: cover;
+}
+
+.img-back-3 {
+    background: url('../assets/padres-scene.jpg');
+    background-size: cover;
+}
+
+.img-back-4 {
+    background: url('../assets/zeniba-escene.jpg');
+    background-size: cover;
+}
+
+.img-back-5 {
+    background: url('../assets/haku-scene.jpg');
+    background-size: cover;
 }
 
 
@@ -394,14 +572,11 @@
     bottom: 20%;
     left: 70%;
     color: #000;
-    opacity: 0;
 }
 
 .timer[data-scroll="in"] {
-    -webkit-animation-name: lightSpeedIn;
-    animation-name: lightSpeedIn;
-    -webkit-animation-timing-function: ease-out;
-    animation-timing-function: ease-out;
+    -webkit-animation-name: slideInLeft;
+    animation-name: slideInLeft;
     -webkit-animation-duration: 1s;
     animation-duration: 1s;
     -webkit-animation-fill-mode: both;
@@ -495,9 +670,6 @@
     0% {
         opacity: 0;
     }
-    50% {
-        opacity: 0.40;
-    }
     100% {
         opacity: 1;
     }
@@ -506,9 +678,6 @@
 @keyframes fadeIn {
     0% {
         opacity: 0;
-    }
-    50% {
-        opacity: 0.40;
     }
     100% {
         opacity: 1;
