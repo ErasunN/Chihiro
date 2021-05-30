@@ -779,6 +779,7 @@
 
 #inp-enviar:hover {
     color: #000;
+    transform: scale(1.3);
 }
 
 
