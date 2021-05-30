@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
     })
 
     ScrollOut({
-        targets: 'div'
+        targets: 'div, form'
     });
 
     //Funciones de navegacion de navBar

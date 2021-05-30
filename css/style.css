@@ -736,6 +736,14 @@
     transform: translate(-50%, -50%);
     background-color: #00190C;
     text-align: center;
+    transition: all 0.2s ease-in-out;
+    opacity: 0;
+}
+
+.form-box[data-scroll="in"] {
+    animation-name: fadeIn;
+    animation-duration: 1s;
+    animation-fill-mode: both;
 }
 
 .form-box h1 {
