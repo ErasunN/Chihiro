@@ -57,42 +57,43 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     //Funciones de navegacion de navBar
-    let btnHome = document.querySelector("#btn-home");
+    let btnHome = document.querySelectorAll(".btn-home");
     let btnChar = document.querySelector("#btn-char");
     let btnAb = document.querySelector("#btn-about");
-
     let homeSec = document.querySelector("#home");
     let charSec = document.querySelector("#char");
     let abSec = document.querySelector("#about");
 
-    btnHome.addEventListener("click", (e) => {
-        e.preventDefault();
-        document.querySelector(".loader").classList.remove("fadeOut");
-        document.querySelector(".home").classList.remove("fadeIn");
-        let id = `${e.target.getAttribute("id")}`;
-        let idArr = id.split("-");
-        if (idArr.includes(homeSec.id)) {
-            document.querySelector(".home").style.display = "none";
-            document.querySelector(".loader").style.display = "block";
-            document.querySelector(".loader").style.opacity = 1;
-            if (charSec.style.display != "none") {
-                charSec.style.display = "none";
-            }
-            if (abSec.style.display != "none") {
-                abSec.style.display = "none";
-            }
-            setTimeout(() => {
-                document.querySelector(".loader").classList.add("fadeOut");
-                document.querySelector(".home").classList.add("fadeIn");
-                document.querySelector(".home").style.display = "block";
-                if (navbar.classList.contains("change")) {
-                    navbar.classList.remove("change")
+    btnHome.forEach(btn => {
+        btn.addEventListener("click", (e) => {
+            debugger
+            e.preventDefault();
+            document.querySelector(".loader").classList.remove("fadeOut");
+            document.querySelector(".home").classList.remove("fadeIn");
+            let id = `${e.target.getAttribute("class")}`;
+            let idArr = id.split("-");
+            if (idArr.includes(homeSec.id)) {
+                document.querySelector(".home").style.display = "none";
+                document.querySelector(".loader").style.display = "block";
+                document.querySelector(".loader").style.opacity = 1;
+                if (charSec.style.display != "none") {
+                    charSec.style.display = "none";
                 }
-                homeSec.style.display = "block";
-            }, 3000);
-        }
-
-    });
+                if (abSec.style.display != "none") {
+                    abSec.style.display = "none";
+                }
+                setTimeout(() => {
+                    document.querySelector(".loader").classList.add("fadeOut");
+                    document.querySelector(".home").classList.add("fadeIn");
+                    document.querySelector(".home").style.display = "block";
+                    if (navbar.classList.contains("change")) {
+                        navbar.classList.remove("change")
+                    }
+                    homeSec.style.display = "block";
+                }, 3000);
+            }
+        });
+    })
 
     btnChar.addEventListener("click", (e) => {
         e.preventDefault();
