@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
             hour = minute * 60,
             day = hour * 24;
 
-        let deadline = "May 28, 2021 00:00:00",
+        let deadline = "Jun 28, 2021 00:00:00",
             countDown = new Date(deadline).getTime(),
             x = setInterval(function() {
 
