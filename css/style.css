@@ -429,7 +429,7 @@
 
 .my-card:hover>.card-img {
     filter: none;
-    transform: perspective(1200px) translate3d(-5px, -10px, 0) rotateY(5deg);
+    transform: perspective(1500px) translate3d(-5px, -5px, -25px) rotateY(5deg);
 }
 
 .card-content * {
@@ -648,7 +648,7 @@
 }
 
 .img-3d:hover {
-    transform: scale3d(1.4, 1.5, 1.1);
+    transform: perspective(900px) translate3d(-5px, -5px, 200px);
 }
 
 .img-chihiro-haku {
@@ -831,6 +831,13 @@
     font-size: 1.2rem;
 }
 
+#content {
+    height: 30%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
 
 /* Animacion de movimiento constante hacia la izquierda */
 
@@ -896,12 +903,10 @@
 
 @keyframes slideInLeft {
     0% {
-        -webkit-transform: translateX(-100%);
         transform: translateX(-100%);
         visibility: visible;
     }
     100% {
-        -webkit-transform: translateX(0);
         transform: translateX(0);
     }
 }
