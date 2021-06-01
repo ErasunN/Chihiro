@@ -66,7 +66,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     btnHome.forEach(btn => {
         btn.addEventListener("click", (e) => {
-            debugger
             e.preventDefault();
             document.querySelector(".loader").classList.remove("fadeOut");
             document.querySelector(".home").classList.remove("fadeIn");
